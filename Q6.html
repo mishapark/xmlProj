@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>ITC5202 - Project</title>
+</head>
+
+<body style="background-color: navajowhite; color: darkblue; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center;  height: 100vh;">
+<h1> Order Report</h1>
+<button onclick="Show()"> Show orders </button>
+<p id="demo"></p>
+
+<script>
+    function Show() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "./order6.xml", false);
+        xhttp.send();
+        xmlDoc = xhttp.responseXML;
+
+        var Order = xmlDoc.getElementsByTagName("order");
+        var custId = xmlDoc.getElementsByTagName("customerid");
+
+        var ordLen = xmlDoc.getElementsByTagName("order").length;
+
+        var output = "<table border='1'>";
+            output += "<tr>"
+            output += "<td>" + "Order ID" + "</td>";
+            output += "<td>" + "Customer ID" + "</td>";
+            output += "<td>" + "Item ID" + "</td>";
+            output += "</tr>"
+            for (let i = 0; i < ordLen; i++) { 
+                if (xmlDoc.getElementsByTagName('status')[i].childNodes[0].nodeValue == 'pending') {
+                    output += "<tr>"
+                    var ordId = xmlDoc.getElementsByTagName("order")[i].getAttribute("ordId");
+                    output += "<td>" + ordId + "</td>";
+
+                    output += "<td>" + custId[i].innerHTML + "</td>";
+
+                    output += "<td>";
+                    for (let j = 0; j < Order[i].getElementsByTagName('item').length; j++) {
+                        output += Order[i].getElementsByTagName('item')[j].getAttribute("itemid") + "<br/>";
+                    }
+                    output += "</td>";
+
+                    output += "</tr>"
+                }
+            }
+            output += "</table>"
+            document.getElementById("demo").innerHTML = output; 
+    }
+    
+</script>
+
+</body></html>

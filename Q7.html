@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Project 1</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; background-color: bisque; color: brown; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
+<p>
+  <label for="textfield">Enter Item Name:</label>
+  <input type="text" name="textfield" id="textfield">
+  <input type="button" name="button" id="button" value="Search" onclick="Show()">
+</p>
+<h3>List of all information about the item</h3>
+<table width="229" border="1">
+  <tbody>
+    <tr>
+      <td width="135">Customer Id</td>
+      <td width="78">Item Id</td>
+    </tr>
+  </tbody>
+</table>
+<p id="demo">&nbsp;</p>
+
+
+    <script>
+      function Show() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "./order7.xml", false);
+        xhttp.send();
+        xmlDoc = xhttp.responseXML;
+
+        var Order = xmlDoc.getElementsByTagName("order");
+
+        var orders = xmlDoc.getElementsByTagName("order").length;
+        var nameTxt = document.getElementById('textfield').value.trim();
+        
+        if (nameTxt == "") {
+          var error = "<p  style='color: red; font-size: 20px;'>Enter Item Name</p>";
+          document.getElementById("demo").innerHTML = error; 
+        } else {
+          var output = "<table border='1'>";
+              for (let i = 0; i < orders; i++) { 
+                for (let j = 0; j < Order[i].getElementsByTagName('item').length; j++) {
+                  if (Order[i].getElementsByTagName('item')[j].children[0].innerHTML.includes(nameTxt)) {
+  
+                      var custId = Order[i].getElementsByTagName('customerid')[0].innerHTML;
+                      var itemID = Order[i].getElementsByTagName('item')[j].getAttribute("itemid")
+  
+                      output += "<tr>"
+                      output += "<td width='135'>" + custId + "</td>";
+  
+                      output += "<td width='78'>";
+                      output += itemID + "<br/>";
+                      output += "</td>";
+  
+                      output += "</tr>"
+  
+                  }
+              }
+            }
+            output += "</table>"
+            document.getElementById("demo").innerHTML = output; 
+        }
+    }
+    </script>
+  </body>
+</html>

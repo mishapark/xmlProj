@@ -1,0 +1,107 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet type="text/xsl" href="./order8.xsl"?>
+<orders> 
+    <order ordId = "ab101"> 
+        <customerid>2384</customerid> 
+        <status>pending</status> 
+        <item instock="Y" itemid="SD93"> 
+            <name>Flying By Roller Skates</name> 
+            <price>25.00</price> 
+            <qty>25</qty> 
+        </item> 
+        <item instock="N" itemid="B12"> 
+            <name>Bounce-o Ball</name> 
+            <price>.35</price> 
+            <qty>150</qty> 
+        </item> 
+        <item instock="Y" itemid="BV43"> 
+            <name>All Star Shoe</name> 
+            <price>55.00</price> 
+            <qty>12</qty> 
+        </item> 
+    </order> 
+    <order ordId = "ab102"> 
+        <customerid>5268</customerid> 
+        <status>complete</status> 
+        <item instock="Y" itemid="Q52"> 
+            <name>Crash N Burn Skis</name> 
+            <price>20</price> 
+            <qty>10</qty> 
+        </item> 
+	    <item instock="N" itemid="B19"> 
+            <name>Bounce-p Ball</name> 
+            <price>6.35</price> 
+            <qty>50</qty> 
+        </item> 
+    </order> 
+    <order> 
+        <customerid>3384</customerid> 
+        <status>pending</status> 
+        <item instock="Y" itemid="PS93"> 
+            <name>All Star Shoe</name> 
+            <price>55.00</price> 
+            <qty>12</qty> 
+        </item> 
+        <item instock="Y" itemid="M12"> 
+            <name>All Star Hat</name> 
+            <price>44.35</price> 
+            <qty>15</qty> 
+        </item> 
+    </order> 
+    <order ordId = "ab103"> 
+        <customerid>9008</customerid> 
+        <status>pending</status> 
+        <item instock="N" itemid="F32"> 
+            <name>Fancy Shirt</name> 
+            <price>120</price> 
+            <qty>100</qty> 
+        </item>
+	<item instock="Y" itemid="B18"> 
+            <name>Bounce-x Ball</name> 
+            <price>3.35</price> 
+            <qty>100</qty> 
+        </item>  
+    </order> 
+    <order ordId = "ab104"> 
+        <customerid>6543</customerid> 
+        <status>complete</status> 
+        <item instock="Y" itemid="V12"> 
+            <name>Summertime sadness</name> 
+            <price>25</price> 
+            <qty>15</qty> 
+        </item> 
+	    <item instock="N" itemid="B19"> 
+            <name>Hello there</name> 
+            <price>6</price> 
+            <qty>70</qty> 
+        </item> 
+    </order>
+    <order ordId = "ab105"> 
+        <customerid>9876</customerid> 
+        <status>pending</status> 
+        <item instock="N" itemid="L90"> 
+            <name>Baking Cookies</name> 
+            <price>70</price> 
+            <qty>50</qty> 
+        </item> 
+	    <item instock="Y" itemid="A18"> 
+            <name>Lolipops</name> 
+            <price>15</price> 
+            <qty>87</qty> 
+        </item> 
+    </order>
+    <order ordId = "ab106"> 
+        <customerid>5321</customerid> 
+        <status>complete</status> 
+        <item instock="Y" itemid="O90"> 
+            <name>Sunset Glow</name> 
+            <price>60</price> 
+            <qty>20</qty> 
+        </item> 
+	    <item instock="N" itemid="V19"> 
+            <name>Pillows</name> 
+            <price>16</price> 
+            <qty>21</qty> 
+        </item> 
+    </order>
+</orders> 

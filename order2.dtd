@@ -1,0 +1,12 @@
+<!ELEMENT orders (order+)>
+<!ELEMENT order (customerid, status, item+)>
+<!ELEMENT customerid (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT item (name, price, qty)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT qty (#PCDATA)>
+
+<!ATTLIST order ordId ID #IMPLIED>
+<!ATTLIST item instock CDATA #REQUIRED>
+<!ATTLIST item itemid CDATA #REQUIRED>
